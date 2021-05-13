@@ -1,15 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"
-    buffer="1kb"
-    %>
-    <!-- 버퍼는 저장하지 않으면 8KB로 설정된다. -->
-<!DOCTYPE html>
+    pageEncoding="UTF-8" 
+    buffer="1kb" %>
+    <!-- 버퍼는 지정하지 않으면 8kb로 설정된다.  -->
 <html>
-<head>
-<meta charset="UTF-8">
-<title>OutMain.jsp</title>
-</head>
-<body>
+<head><title>내장객체-out</title></head>
+<body>	
 	<%
 	//현재 페이지에 설정된 버퍼의 크기
 	int total = out.getBufferSize();
@@ -25,7 +20,6 @@
 	out.print(1);
 	out.print(false);
 	out.print('가');
-	
-	%>
+	%> 
 </body>
 </html>

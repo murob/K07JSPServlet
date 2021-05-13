@@ -2,58 +2,58 @@
     pageEncoding="UTF-8"%>
 <%-- 
 include 지시어 : 공통으로 사용할 JSP파일을 생성한 후
-	현재문서에 포함시킬 때 사용한다. 각각의 JSP파일 상단에는
-	반드시 page 지시어가 삽입되어야 한다.
-	단, 하나의 JSP파일에서 page지시어가 중복선언되면 안된다.
- --%>
-<%@ include file = "IncludePage.jsp" %>
+	현재문서에 포함시킬때 사용한다. 각각의 JSP파일 상단에는
+	반드시 page 지시어가 삽입되어야 한다. 
+	단, 하나의 JSP파일에서 page지시어가 중복선언되면 안된다. 
+--%>
+<%@ include file = "IncludePage.jsp" %>       
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>IncludeMain.jsp</title>
+
+<!-- CSS코드는 양이 많으므로 외부파일로 선언하여 현재문서에 링크시킨다.  -->
 <link rel="stylesheet" href="./css/div_layout.css" />
+
 </head>
 <body>
-	<div class="AllWrap">
-		<div class="header">
-			<!-- GNB영역 -->
-			<%@ include file="../common/Top.jsp" %>
+<div class="AllWrap">
+	<div class="header">
+		<!-- GNB(Global Navigation Bar)영역 - 전체공통메뉴 -->
+		<%@ include file="../common/Top.jsp" %>
+	</div>
+	<div class="body">
+		<div class="left_menu">
+			<!-- LNB(Local Navigation Bar)영역 - 로컬메뉴  -->
+			<%@ include file="../common/Left.jsp" %>
 		</div>
-		<div class="body">
-			<div class="left_menu">
-				<!-- LNB영역(Local Navigation Bar) -->
-				<%@ include file="../common/Left.jsp" %>
-			</div>
-			<div class="contents">
-				<!-- Contents 영역 -->
-				
-				<h2>오늘의날짜 : <%=todayStr %></h2>
-				<br /><br />
-				1980년 5·18민주화운동 당시 상황을 보고한 계엄군 문건에는 이처럼 가려진 한 사람의 이름이 여러 곳에 등장한다.
-				<br /><br />
-				당시 계엄군은 광주 상황을 거의 실시간으로 파악해 시민들이 외치는 구호나 요구사항을 상부에 보고했다.
-				<br /><br /> 
-				구호에 등장하는 최규하 당시 대통령 등의 이름은 모두 실명으로 적혀 있지만 유일하게 익명 처리된 한 사람이 있다.
-				<br /><br /> 
-				바로 전직대통령 전두환씨(90)다. 5·18 당시 국군 보안사령관 겸 중앙정보부장 서리였던 전씨가 이미 함부로 군 문건에 이름을 적지도, 입에 올리지도 못할 정도의 ‘최고실력자’였다는 점을 보여준다.
-				<br /><br />
-				10일 경향신문 취재를 종합하면 5·18 당시 계엄군이 광주의 상황을 실시간으로 작성해 보고한 여러 문건에서 전씨의 이름만 익명으로 처리됐다.
-				<br /><br /> 
-				당시 계엄군 최고 수뇌부는 보안사령부나 계엄사령부 치안처 등을 통해 광주의 상황을 보고 받았다.
-				<br /><br />
-				전씨가 사령관이었던 보안사령부는 관련 보고에서 전씨의 이름을 대부분 제대로 표기하지 않았다.
-				<br /><br /> 
-				보안사의 5월20일자 ‘광주 시내 시외 동향’ 상황보고에서는 “18:20(오후 6시20분) 현재 금남로 3가 한국은행 앞에 1000명으로 증가한 시민 학생이 계엄군과 대치하면서 ‘계엄군 물러가라’ ‘전○○, 신현확 물러가라’ 등의 구호를 외치며 시위 중” 이라고 쓰여 있다.
-				<br /><br /> 
-				전씨 이름은 익명 처리됐지만 당시 신현확 국무총리의 이름은 그대로 적혔다.
-				<br /><br />
-			</div>
-		</div>
-		<div class="copyright">
-			<!-- Copyright -->
-			<%@ include file="../common/Copyright.jsp" %>
+		<div class="contents">
+			<!-- Contents 영역-->		
+		
+			<h2>오늘의날짜 : <%=todayStr %></h2>
+			<br /><br />		
+		
+(서울=연합뉴스) 조민정 기자 = 문재인 대통령은 10일 부동산 문제에 대해선 한껏 몸을 낮췄지만, 일부 장관 후보자들의 임명 논란에 대해서는 뚜렷한 소신을 밝혔다.
+<br /><br />	
+기자회견을 겸해 청와대 춘추관에서 열린 취임 4주년 특별연설에서였다.
+<br /><br />	
+문 대통령이 언론과의 소통을 위해 춘추관을 찾은 것은 지난 1월 18일 신년 기자회견 이후 112일 만이다. 오전 11시에 시작한 특별연설은 예정된 1시간을 10분가량 넘겨 이어졌다.
+<br /><br />	
+짙은 회색 정장에 파란색 넥타이를 한 문 대통령은 연단에 서서 28분간 남은 임기 1년간 주력할 국정과제를 설명하는 특별연설을 한 뒤 자리에 앉아 주요 현안에 대한 출입기자들의 질문에 답했다.
+<br /><br />	
+문 대통령에게 던져진 첫 질문은 '지난 4년간 어떤 점이 아쉬움으로 남느냐'였다.
+<br /><br />	
+문 대통령은 주저 없이 "가장 아쉬웠던 점은 역시 부동산 문제"라고 답했다. 사실상 부동산 실패를 자인하면서 사과의 뜻을 밝힌 것이다.
+<br /><br />	
+이 과정에서 문 대통령은 "지난 재보선에서 엄중한 심판을 받았다", "정부가 할 말이 없는 상황", "죽비를 맞고 정신이 번쩍 들만한 심판"이라며 성난 부동산 민심 앞에 자세를 낮췄다.
+<br /><br />
 		</div>
 	</div>
+	<div class="copyright">
+		<!-- Copyright -->
+		<%@ include file="../common/Copyright.jsp" %>
+	</div>
+</div>
 </body>
 </html>
