@@ -13,8 +13,8 @@
 request.setCharacterEncoding("UTF-8");
 
 /*
-전송방식에 상관없이 getParametr()로 폼값을 받을수 있다. 
-만약 값이 입력되지 않았다면 길이가 0인 String객체를 반환하골
+전송방식에 상관없이 getParameter()로 폼값을 받을수 있다. 
+만약 값이 입력되지 않았다면 길이가 0인 String객체를 반환하고
 파라미터명이 틀린경우에는 null을 반환한다. 
 */ 
 String id = request.getParameter("id");

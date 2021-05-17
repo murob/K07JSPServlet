@@ -37,7 +37,7 @@ if(font==null || font.length()==0) font="Verdana";
 	<h3>숫자를 입력후 버튼을 눌러주세요</h3>
  	<!--  
  		method : get방식으로
- 		action : 현제페이지로 설정된다. 
+ 		action : 현제페이지로 설정된다. //기본값은 자기자신
  		=> 입력후 전송한 값은 주소표시줄에서 쿼리스트링으로
  		확인할 수 있다. 
  	-->
@@ -47,7 +47,7 @@ if(font==null || font.length()==0) font="Verdana";
 	</form>	
 	<%
 	String counter = request.getParameter("counter");				
-	if(counter!=null){
+	if(counter!=null){//counter가 null이면 즉, 값이 입력되면..
 		/*
 		toCharArray() : String을 char형 배열로 반환해주는 메소드
 		*/

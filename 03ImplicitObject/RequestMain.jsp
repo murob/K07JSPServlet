@@ -26,9 +26,6 @@
 		<input type="submit" value="Post방식" />
 	</form>
 	
-	
-	
-	
 
 
 

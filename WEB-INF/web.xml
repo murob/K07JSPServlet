@@ -40,6 +40,22 @@
 <!--   	<error-code>500</error-code> -->
 <!--   	<location>/03ImplicitObject/Exception.jsp</location> -->
 <!--   </error-page> -->
+
+<!-- 
+	세션 유지시간 설정하기 : web.xml에서는 '분' 단위로 설정한다.
+ -->
+ 
+<!-- <session-config> -->
+<!-- 	<session-timeout>60</session-timeout> -->
+<!-- </session-config> -->
+
+
+
+
+
+
+
+
   
   
   <!--  
