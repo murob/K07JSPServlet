@@ -22,9 +22,9 @@
 					<a href="../06Session/Login.jsp">로그아웃</a>
 				<% } %>
 				&nbsp;&nbsp;&nbsp;
-				<a href="../08Board1/BoardList.jsp">회원제게시판1[PageX]</a>
+				<a href="../08Board/ListSimple.jsp">회원제게시판1[PageX]</a>
 				&nbsp;&nbsp;&nbsp;
-				<a href="../08Board2/BoardList.jsp">회원제게시판2[Page0]</a>
+				<a href="../08Board/List.jsp">회원제게시판2[Page0]</a>
 				&nbsp;&nbsp;&nbsp;
 				<a href="../DateRoom/DataList">자료실(Model2)</a>
 			</td>

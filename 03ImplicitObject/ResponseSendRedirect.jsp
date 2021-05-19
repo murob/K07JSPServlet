@@ -21,7 +21,7 @@ else{
 %>	
 	<script>
 		alert("아이디와 패스워드가 일치하지 않습니다.");
-		history.go(-1);
+		history.go(-1);//이전페이지로 돌아간다
 	</script>
 <%	
 	/*

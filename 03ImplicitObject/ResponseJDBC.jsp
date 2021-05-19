@@ -6,7 +6,7 @@
 MemberDAO dao = new MemberDAO();
 
 //사용자가 입력한 파라미터를 받아온다. 
-String id = request.getParameter("user_id");
+String id = request.getParameter("user_id");//웹브라우저에서 입력받은 값을 받아온다.
 String pw = request.getParameter("user_pwd");
 
 //DAO의 isMember()메소드를 호출한다. 이때 파라미터를 같이 전달한다. 
