@@ -3,7 +3,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-String num = request.getParameter("num");//파라미터 받기
+//파라미터 받기
+String num = request.getParameter("num");//일련번호
+String searchField = request.getParameter("searchField");//검색필드
+String searchWord = request.getParameter("searchWord");//검색어
+
+String queryStr="";
+if(searchWord!=null){
+	   //검색 파라미터 추가하기
+	   queryStr = "searchField="+searchField+"&searchWord="+searchWord;
+	}
+
 BoardDAO dao = new BoardDAO(application);
 dao.updateVisitCount(num);//조회수 증가
 BoardDTO dto = dao.selectView(num);//파라미터로 전달된 일련번호를 조회
@@ -15,6 +25,9 @@ dao.close();
 <meta charset="UTF-8">
 <title>View.jsp</title>
 <script>
+/*
+	Javascript를 통한 폼값 전송으로 삭제 처리
+ */
 function isDelete(){
 	var c = confirm("정말로 삭제하시겠습니까?");
 	if(c){
@@ -28,6 +41,10 @@ function isDelete(){
 </head>
 <body>
 	<h2>회원제 게시판 - 상세보기(View)</h2>
+	<!-- 
+		회원제 게시판에서 게시물 삭제를 위해 상세보기에
+		게시물의 일련번호를 hidden 입력상자를 삽입한다. 
+	 -->
 	<form name="writeFrm">
 		<input type="hidden" name="num" value="<%=num %>" />
 		<table border="1" width="90%">
@@ -70,7 +87,7 @@ function isDelete(){
 					<%
 					}
 					%>
-						<button type="button" onclick="location.href='ListSimple.jsp';">리스트바로가기</button>	
+					<button type="button" onclick="location.href='List.jsp?<%=queryStr%>';">리스트바로가기</button>	
 				</td>
 			</tr>
 		</table>

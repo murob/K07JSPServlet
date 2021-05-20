@@ -65,7 +65,7 @@ dao.close();
 				<td colspan="2" align="center">
 					<button type="submit">작성완료</button>
 					<button type="reset">RESET</button>
-					<button type="button" onclick="location.href='ListSimple.jsp';">리스트바로가기</button>
+					<button type="button" onclick="location.href='List.jsp';">리스트바로가기</button>
 				</td>
 			</tr>
 		</table>
