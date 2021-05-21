@@ -152,7 +152,7 @@ dao.close();
 				<%=BoardPage.pagingStr(totalCount, pageSize, blockPage, 
 						pageNum, request.getRequestURI(), queryStr) %>
 			</td>
-			<td width="100"><button type="button" onclick="location.href='Write.jsp';">글쓰기</button></td>
+			<td width="100"><button type="button" onclick="location.href='Write.jsp?<%=queryStr %>';">글쓰기</button></td>
 		</tr>
 	</table>
 </body>

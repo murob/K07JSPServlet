@@ -1,6 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file = "./isLogin.jsp" %>
+<%
+String searchField = request.getParameter("searchField");//검색할 필드명
+String searchWord = request.getParameter("searchWord");//검색어
+
+//검색 파라미터 추가 위한 변수
+String queryStr = "";
+//사용자가 검색을 했다면...
+if(searchWord!=null){
+   //검색 파라미터 추가하기
+   queryStr = "searchField="+searchField+"&searchWord="+searchWord;
+}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +58,7 @@
 				<td colspan="2" align="center">
 					<button type="submit">작성완료</button>
 					<button type="reset">RESET</button>
-					<button type="button" onclick="location.href='List.jsp';">리스트바로가기</button>
+					<button type="button" onclick="location.href='List.jsp?<%=queryStr%>';">리스트바로가기</button>
 				</td>
 			</tr>
 		</table>
