@@ -1,9 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration02.html</title>
+<meta charset="UTF-8">
+    <title>memberRegistForm.jsp</title>
     <!-- 
         웹폰트 : https://fonts.google.com/
         jQuery UI : 
@@ -30,7 +31,7 @@
         .w02{width:200px;}
         .w03{width:100px;}
         .w04{width:230px;}
-        .w05{width:150px;} 
+        .w05{width:150px;}
         .w06{width:80px;}
         .s01{width:140px;}
         .s02{width:70px;}
