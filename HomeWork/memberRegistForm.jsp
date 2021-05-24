@@ -41,7 +41,6 @@ MembershipDTO dto = new MembershipDTO();
         .s01{width:140px;}
         .s02{width:70px;}
     </style>
-
    
     
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -113,7 +112,7 @@ MembershipDTO dto = new MembershipDTO();
         if(fn.name.value==""){
             alert("이름을 입력해주세요");fn.name.focus();return false;
         } 
-        return false;
+        return true;
     }
     function isPassword(param){
         //숫자나 특수기호가 확인되면 true로 변경한다.

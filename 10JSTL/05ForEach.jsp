@@ -119,6 +119,28 @@
 		</c:forEach>	
 	</table>
 	
+	<table border="1">
+	<c:forEach begin="2" end="9" var="dan" varStatus="gugudan">
+		<c:choose>
+			<c:when test="${gugudan.count mod 2 eq 0 }">
+				<!-- 짝수인경우 빨간색으로 지정 -->
+				<c:set var="color" value="red" />
+			</c:when>
+			<c:otherwise>
+				<!-- 홀수인 경우 노란색으로 지정 -->
+				<c:set var="color" value="yellow" />
+			</c:otherwise>
+		</c:choose>
+		<tr onmouseover="this.style.backgroundColor='${color }';" 
+			onmouseout="this.style.backgroundColor='white';">
+			<c:forEach begin="1" end="9" var="su">
+				<td>${dan } * ${su } = ${dan*su }</td>
+			</c:forEach>
+		</tr>	
+	</c:forEach>
+	</table>
+	
+	
 	
 </body>
 </html>
