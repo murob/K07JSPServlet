@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>FormAction.jsp</title>
+<title>02FormAction.jsp</title>
 <script>
 	//무기명 함수를 통해 폼값 체크
 	var frmCheck = function(){
@@ -55,5 +55,4 @@
 	</ul>	
 	</form>
 </body>
-
 </html>

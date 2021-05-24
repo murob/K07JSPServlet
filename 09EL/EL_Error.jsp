@@ -1,14 +1,16 @@
-<%@page import="java.util.Map"%>
+<%@page import="model.MemberDTO"%>
 <%@page import="java.util.HashMap"%>
+<%@page import="java.util.Map"%>
 <%@page import="java.util.Vector"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>EL_Error.jsp</title>
+<title>타이틀</title>
 </head>
 <body>
 <fieldset>
@@ -18,7 +20,7 @@
 		문자열 형태로 숫자가 전달되면 연산시 자동으로 숫자로 변경된후
 		연산된다. 숫자로 변경할수 없는 문자가 포함된다면 예외가 발생한다.
 		또한 문자열끼리의 연결도 EL에서는 허용되지 않는다. 
-	-->				
+	-->
 	<h2>+를 숫자가 아닌 문자열 연결에 사용시(에러)</h2>
 	<ul>
 		<li>\${"100"+10} : ${"100"+10} [정상]</li>
@@ -160,5 +162,4 @@
 	데이터 저장후 : ${number=1}
 </fieldset>
 </body>
-
 </html>

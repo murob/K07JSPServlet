@@ -1,16 +1,21 @@
+<%@page import="homework.MembershipDTO"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.Map"%>
+<%@page import="homework.MembershipDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+MembershipDAO dao = new MembershipDAO(application); 
+MembershipDTO dto = new MembershipDTO();
+
+%>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-    <title>memberRegistForm.jsp</title>
-    <!-- 
-        웹폰트 : https://fonts.google.com/
-        jQuery UI : 
-     -->
-   
-    <style>
+<title>Insert title here</title>
+<style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
         *{margin:0px auto; font-family: 'Noto Sans KR', sans-serif;}
         .AllWrap{padding:50px;}
@@ -135,9 +140,9 @@
         else
             return false;
     }
-    //아이디가 8~12자 사이가 아니면 false를 반환한다.
+    //아이디가 3~15자 사이가 아니면 false를 반환한다.
     var idLength = function(param){	
-        if(!(param.value.length>=8 && param.value.length<=12)){		
+        if(!(param.value.length>=3 && param.value.length<=15)){		
             return false;
         }
         return true;
@@ -173,7 +178,7 @@
     function idCapsule(){        
         //1.아이디는 8~12자 이내여야 한다. 즉 7자를 쓰거나 13자를 쓰면 잘못된 아이디로 판단하고 재입력을 요구한다.
         if(!idLength(idObj)){
-            alert('아이디는 8~12자만 가능합니다.');
+            alert('아이디는 3~15자만 가능합니다.');
             return false;
         }        
         //2.아이디는 반드시 영문으로 시작해야 한다. 만약 숫자로 시작하면 잘못된 아이디로 판단한다.
@@ -233,9 +238,8 @@
     }
     </script>
 </head>
-
 <body>
-<form action="" method="post" name="loginFrm" onsubmit="return loginValdidate(this)">
+<form action="registProcess.jsp" method="post" name="loginFrm" onsubmit="return loginValdidate(this)">
 <div class="AllWrap">
     <div class="wrap_regiform">
         <p>*필수입력사항</p>
