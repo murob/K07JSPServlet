@@ -26,7 +26,8 @@ request.setAttribute("member", new MemberDTO("Sung", "9999", "성춘향", null))
 	 -->
 	<jsp:include page="ParamActionIncludeResult.jsp">
 		<jsp:param value="이몽룡" name="name"/>
-		<jsp:param value="Lee" name="lee"/>
+		<jsp:param value="으갹" name="id"/>
+		<jsp:param value="라면에쇠주?" name="query"/>
 	</jsp:include>
 	
 	<%

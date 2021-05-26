@@ -1,8 +1,11 @@
+<%@page import="utils.JSFunction"%>
 <%@page import="homework.MembershipDAO"%>
 <%@page import="homework.MembershipDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+request.setCharacterEncoding("UTF-8");
+
 String id = request.getParameter("user_id");
 String password = request.getParameter("pass1");
 String name = request.getParameter("name");
@@ -15,6 +18,10 @@ String email = request.getParameter("email1") + "@" + request.getParameter("emai
 String phone = request.getParameter("mobile1") + request.getParameter("mobile2") + request.getParameter("mobile3");
 String tellnum = request.getParameter("tel1") + request.getParameter("tel2") + request.getParameter("tel3");
 
+ 
+System.out.println(tellnum);
+System.out.println(id);
+
 MembershipDTO dto = new MembershipDTO();
 dto.setId(id);
 dto.setPassword(password);
@@ -22,6 +29,8 @@ dto.setName(name);
 dto.setGender(gender);
 dto.setBirthday(birthday);
 dto.setZipcode(zipcode);
+dto.setAddress1(address1);
+dto.setAddress2(address2);
 dto.setEmail(email);
 dto.setPhone(phone);
 dto.setTellnum(tellnum);
@@ -29,8 +38,14 @@ dto.setTellnum(tellnum);
 
 MembershipDAO dao = new MembershipDAO(application);
 
-dao.memberRegist(dto);
+int iResult = dao.memberRegist(dto); 
 
-
-
+System.out.println(iResult);
+dao.close();
+if(iResult==1){
+	response.sendRedirect("memberList.jsp");
+}
+else{
+	JSFunction.alertBack("로그인에 실패했습니다.", out);
+}
 %>

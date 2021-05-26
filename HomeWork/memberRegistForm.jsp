@@ -4,11 +4,6 @@
 <%@page import="homework.MembershipDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-MembershipDAO dao = new MembershipDAO(application); 
-MembershipDTO dto = new MembershipDTO();
-
-%>
     
 <!DOCTYPE html>
 <html>
@@ -79,7 +74,7 @@ MembershipDTO dto = new MembershipDTO();
         }	
         else{
             fn.user_id.readOnly = true;
-            window.open("./pages/id_overapping.jsp?id="+fn.user_id.value,
+            window.open("./pages/id_overapping.jsp?user_id="+fn.user_id.value,
                     "idover", "width=300,height=200");
         }
     }
@@ -157,9 +152,9 @@ MembershipDTO dto = new MembershipDTO();
     }
     //아이디의 첫문자는 숫자로 시작할수 없다
     var idStartAlpha = function(param){	
-        if(isNumber(param.value.substring(0,1))==true){		
+        if(isNumber(param.value.substring(0,1))==true){	
             return false;
-        }	
+        }
         return true;
     }
     //아스키코드로 숫자 or 알파벳인지 확인. 아니면 false반환
@@ -250,7 +245,7 @@ MembershipDTO dto = new MembershipDTO();
             <tr>
                 <td><span class="red">*</span> 아이디</td>
                 <td>
-                    <input type="text" class="w01" name="user_id" value="" />       
+                    <input type="text" class="w01" name="user_id" value="asdasd123" />       
                     <button type="button" onclick="idCheck(this.form);">중복확인</button>             
                 </td>
             </tr>
@@ -263,7 +258,7 @@ MembershipDTO dto = new MembershipDTO();
             <tr>
                 <td><span class="red">*</span> 비밀번호</td>
                 <td>
-                    <input type="text" class="w01" name="pass1" value="" />                   
+                    <input type="text" class="w01" name="pass1" value="asdasd123!@" />                   
                 </td>
             </tr>
             <tr>
@@ -278,13 +273,13 @@ MembershipDTO dto = new MembershipDTO();
             <tr>
                 <td><span class="red">*</span> 비밀번호확인</td>
                 <td>
-                    <input type="text" class="w01" name="pass2" value="" />
+                    <input type="text" class="w01" name="pass2" value="asdasd123!@" />
                 </td>
             </tr>
             <tr>
                 <td><span class="red">*</span> 이름</td>
                 <td>
-                    <input type="text" class="w01" name="name" value="" />
+                    <input type="text" class="w01" name="name" value="꺄륵" />
                     
                     <label for="radio-1">남</label>
                     <input type="radio" name="gender" id="radio-1" value="남" checked>
@@ -296,30 +291,30 @@ MembershipDTO dto = new MembershipDTO();
             <tr>
                 <td><span class="red">*</span> 생년월일</td>
                 <td style="padding: 0px 0 5px 5px;">
-                    <input type="text" class="w02" name="birthday" id="birthday" value="" />
+                    <input type="text" class="w02" name="birthday" id="birthday" value="1995-07-11" />
                     <img src="./images/pick.jpg" alt="" class="pick" />
                 </td>
             </tr>
             <tr>
                 <td><span class="red">*</span> 주소</td>
                 <td>
-                    <input type="text" class="w03" name="zipcode" value="" />
+                    <input type="text" class="w03" name="zipcode" value="06027" />
                     <button type="button" onclick="zipcodeFind();">우편번호찾기</button> 
                 </td>
             </tr>
             <tr>
                 <td></td>
                 <td>
-                    <input type="text" class="w04" name="address1" value="" />                
-                    <input type="text" class="w04" name="address2" value="" />
+                    <input type="text" class="w04" name="address1" value="서울 강남구 강남대로 652" />                
+                    <input type="text" class="w04" name="address2" value="코스모빌딩" />
                 </td>
             </tr>
             <tr>
                 <td><span class="red">*</span> 이메일</td>
                 <td>
-                    <input type="text" class="w05" name="email1" value="" />
+                    <input type="text" class="w05" name="email1" value="asd123" />
                     @
-                    <input type="text" class="w05" name="email2" value="" />
+                    <input type="text" class="w05" name="email2" value="naver.com" />
                     <select name="email_domain" class="s01" onchange="inputEmail(this.form);">
                         <option value="1">직접입력</option>
                         <option value="naver.com">naver.com</option>

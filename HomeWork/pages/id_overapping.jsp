@@ -14,7 +14,7 @@
     	  사용자는 수정할 수 없게되지만
     	  JS에서는 값을 수정할 수 있다.
     	  */
-        opener.document.registFrm.user_id.value =
+        opener.document.loginFrm.user_id.value =
           document.overlapFrm.retype_id.value;
         self.close();
       }
@@ -27,7 +27,7 @@
     <h3>부모창에 입력한 아이디 : <%=request.getParameter("user_id") %></h3>
     <h3>아이디가 중복되었을때 재입력한 아이디</h3>
     <form name="overlapFrm">
-      <input type="text" name="retype_id" size="20" />
+      <input type="text" name="retype_id" size="20" value="<%=request.getParameter("user_id")%>"/>
       <input type="button" value="아이디사용하기" onclick="idUse();" />
     </form>
   </body>

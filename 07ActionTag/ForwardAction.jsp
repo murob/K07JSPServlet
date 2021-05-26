@@ -20,9 +20,9 @@ request.setAttribute("requestVar", "리퀘스트영역이다");
 	-절대경로로 지정할 경우 컨텍스트 루트명을 포함한 경로로 지정해야다한다.
 	*/
 	
-	/*
-	response.sendRedirect(request.getContextPath() + "/07ActionTag/ForwardActionResult.jsp");//정상적으로 이동됨.
-	*/
+	
+// 	response.sendRedirect(request.getContextPath() + "/07ActionTag/ForwardActionResult.jsp");//정상적으로 이동됨.
+	
 	
 	/*
 	//컨텍스트 루트 경로를 제외하면 이동시 404에러가 발생하게된다.
@@ -35,7 +35,7 @@ request.setAttribute("requestVar", "리퀘스트영역이다");
 	-URL창에는 최초 요청한 페이지의 경로가 보여지므로 사용자는 페이지 이동을 알지못한다.
 	-절대경로로 지정할 경우 Context root(컨텍스트 루트)를 제외한 경로로 지정한다.
 	*/
-	/*request.getRequestDispatcher("/07ActionTag/ForwardActionResult.jsp").forward(request, response);*/
+// 	request.getRequestDispatcher("/07ActionTag/ForwardActionResult.jsp").forward(request, response);
 	%>
 	
 	<!--
