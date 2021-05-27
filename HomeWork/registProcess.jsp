@@ -18,10 +18,6 @@ String email = request.getParameter("email1") + "@" + request.getParameter("emai
 String phone = request.getParameter("mobile1") + request.getParameter("mobile2") + request.getParameter("mobile3");
 String tellnum = request.getParameter("tel1") + request.getParameter("tel2") + request.getParameter("tel3");
 
- 
-System.out.println(tellnum);
-System.out.println(id);
-
 MembershipDTO dto = new MembershipDTO();
 dto.setId(id);
 dto.setPassword(password);
@@ -40,7 +36,6 @@ MembershipDAO dao = new MembershipDAO(application);
 
 int iResult = dao.memberRegist(dto); 
 
-System.out.println(iResult);
 dao.close();
 if(iResult==1){
 	response.sendRedirect("memberList.jsp");

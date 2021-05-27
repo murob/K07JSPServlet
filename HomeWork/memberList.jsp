@@ -53,7 +53,7 @@ param.put("end", end);
 /***페이지처리 end ***/
 
 //목록에 실제 출력할 레코드를 얻어오기 위한 메소드 호출
-List<MembershipDTO> boardLists = dao.selectListPage(param);
+List<MembershipDTO> memberLists = dao.memberList(param);
 //자원해제
 dao.close();
 %>
@@ -87,13 +87,13 @@ dao.close();
 	<table border="1" width="90%">
 		<tr>
 			<th width="10%">번호</th>
-			<th width="50%">아이디</th>
-			<th width="15%">핸드폰번호</th>
-			<th width="10%">이메일</th>
-			<th width="15%">가입날짜</th>
+			<th width="20%">아이디</th>
+			<th width="20%">핸드폰번호</th>
+			<th width="20%">이메일</th>
+			<th width="20%">가입날짜</th>
 		</tr>
 <%
-if(boardLists.isEmpty()){
+if(memberLists.isEmpty()){
 	//컬렉션에 저장된 데이터가 없다면...
 %>
 		<tr>
@@ -108,20 +108,22 @@ else{
 	int vNum = 0;//목록의 가상번호로 사용
 	int countNum = 0;	
 	//List컬렉션에 저장된 갯수만큼 반복하기 위해 확장for문 사용
-	for(MembershipDTO dto : boardLists)
+	for(MembershipDTO dto : memberLists)
 	{
 		//현재 페이지 번호를 적용해서 가상번호 계산
 		vNum = totalCount - (((pageNum-1) * pageSize) + countNum++);
 		
 		//getter()를 통해 출력한다.
 %>
+<!-- 			<td align="left"> -->
+<%-- 				<a href="View.jsp?num=<%=dto.getId()%><%=queryStr %>"><%=dto.getTitle()%></a> --%>
+<%-- 				<a href="View.jsp?num=<%=dto.getId()%><%=queryStr %>"></a> --%>
+<!-- 			</td> -->
 		<tr align="center">
 			<td><%=vNum%></td>
-			<td align="left">
-<%-- 				<a href="View.jsp?num=<%=dto.getId()%><%=queryStr %>"><%=dto.getTitle()%></a> --%>
-				<a href="View.jsp?num=<%=dto.getId()%><%=queryStr %>"></a>
+			<td align="center">
+				<a href="memberView.jsp?num=<%=queryStr %>"><%=dto.getId()%></a>
 			</td>
-			<td align="center"><%=dto.getId()%></td>
 			<td align="center"><%=dto.getPhone()%></td> 
 			<td align="center"><%=dto.getEmail()%></td>
 			<td align="center"><%=dto.getRegistdate()%></td>  

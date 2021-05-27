@@ -139,6 +139,8 @@ TLD파일의 경로(위치) 등록
 	<url-pattern>/mvcboard/list.do</url-pattern>
 </servlet-mapping>
 
+
+<!-- 글쓰기 매핑 -->
 <servlet>
 	<servlet-name>MVCBoardWrite</servlet-name>
 	<servlet-class>model2.mvcboard.WriteController</servlet-class>

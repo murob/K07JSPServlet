@@ -18,10 +18,11 @@ if(searchWord!=null){
 
 MembershipDAO dao = new MembershipDAO(application);
 //조회수 증가
-dao.updateVisitCount(num);
+// dao.updateVisitCount(num);
 //파라미터로 전달된 일련번호를 조회
-MembershipDTO dto = dao.selectView(num);
+MembershipDTO dto = dao.memberView(num);
 dao.close();
+String address = dto.getAddress1() + dto.getAddress2();
 %>     
 <!DOCTYPE html>
 <html>
@@ -53,33 +54,37 @@ function isDelete() {
 <input type="hidden" name="num" value="<%=num %>" />
 <table border="1" width="90%">
 	<tr>
-		<td>번호</td>
-		<td><%=dto.getNum() %></td>
-		<td>작성자</td>
+		<td>아이디</td>
+		<td><%=dto.getId() %></td> 
+		<td>이름</td>
 		<td><%=dto.getName() %></td>
 	</tr>
 	<tr>
-		<td>작성일</td>
-		<td><%=dto.getPostdate() %></td>
-		<td>조회수</td>
-		<td><%=dto.getVisitcount() %></td>
+		<td>비밀번호</td>
+		<td><%=dto.getPassword() %></td>
+		<td>생년월일</td>
+		<td><%=dto.getBirthday() %></td>
 	</tr>
 	<tr>
-		<td>제목</td>
-		<td colspan="3"><%=dto.getTitle() %></td>
-	</tr>
-	<tr> 
-		<td>내용</td>
-		<td colspan="3" height="100">
-			<%=dto.getContent().replace("\r\n","<br/>") %></td>
-		<!--  
-			<textarea> 에서 줄바꿈을 위해 Enter키를 누르면
-			\r\n 으로 저장된다. 이를 브라우저에 출력할때에는
-			<br>로 변경한 후 출력해야 줄바꿈 처리가 된다. 
-		-->
+		<td>우편번호</td>
+		<td><%=dto.getZipcode() %></td>
+		<td>전체주소</td>
+		<td><%=address %></td>
 	</tr>
 	<tr>
-		<td colspan="4" align="center">
+		<td>이메일</td>
+		<td><%=dto.getEmail() %></td>
+		<td>휴대폰번호</td>
+		<td><%=dto.getPhone() %></td>
+	</tr>
+	<tr>
+		<td>전화번호</td>
+		<td><%=dto.getTellnum() %></td>		
+		<td>회원가입일</td>
+		<td><%=dto.getRegistdate() %></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
 		<%
 		/*
 		로그인이 되었고, 동시에 해당 글을 작성한 작성자이면
@@ -89,13 +94,13 @@ function isDelete() {
 			session.getAttribute("USER_ID").toString().equals(dto.getId())){
 		%>			
 			<button type="button" 
-				onclick="location.href='Edit.jsp?num=<%=dto.getNum()%><%=queryStr %>';">
+				onclick="location.href='Edit.jsp?num=<%=dto.getId()%><%=queryStr %>';">
 					수정하기</button>							
 			<button type="button" onclick="isDelete();">삭제하기</button>
 		<%
 		}
 		%>	
-			<button type="button" onclick="location.href='List.jsp?<%=queryStr %>';">
+			<button type="button" onclick="location.href='memberList.jsp?<%=queryStr %>';">
 				리스트바로가기
 			</button>
 		</td>
