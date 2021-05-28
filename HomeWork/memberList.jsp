@@ -122,7 +122,7 @@ else{
 		<tr align="center">
 			<td><%=vNum%></td>
 			<td align="center">
-				<a href="memberView.jsp?num=<%=queryStr %>"><%=dto.getId()%></a>
+				<a href="memberView.jsp?id=<%=dto.getId() %><%=queryStr %>"><%=dto.getId()%></a>
 			</td>
 			<td align="center"><%=dto.getPhone()%></td> 
 			<td align="center"><%=dto.getEmail()%></td>

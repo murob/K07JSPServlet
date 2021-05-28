@@ -4,7 +4,7 @@
     pageEncoding="UTF-8"%>
 <%
 //파라미터 받기
-String num = request.getParameter("num");//일련번호
+String id = request.getParameter("id");//일련번호
 String searchField = request.getParameter("searchField");//검색필드
 String searchWord = request.getParameter("searchWord");//검색어
 

@@ -6,7 +6,7 @@
     pageEncoding="UTF-8"%>
 <%
 //파라미터 받기
-String num = request.getParameter("num");//일련번호
+String id = request.getParameter("id");//일련번호
 String searchField = request.getParameter("searchField");//검색필드
 String searchWord = request.getParameter("searchWord");//검색어
 
@@ -20,7 +20,7 @@ MembershipDAO dao = new MembershipDAO(application);
 //조회수 증가
 // dao.updateVisitCount(num);
 //파라미터로 전달된 일련번호를 조회
-MembershipDTO dto = dao.memberView(num);
+MembershipDTO dto = dao.memberView(id);
 dao.close();
 String address = dto.getAddress1() + dto.getAddress2();
 %>     
@@ -51,7 +51,7 @@ function isDelete() {
 	게시물의 일련번호를 hidden 입력상자를 삽입한다. 
 -->
 <form name="writeFrm">
-<input type="hidden" name="num" value="<%=num %>" />
+<input type="hid den" name="id" value="<%=id %>" />
 <table border="1" width="90%">
 	<tr>
 		<td>아이디</td>
