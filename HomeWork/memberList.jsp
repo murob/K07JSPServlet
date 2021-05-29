@@ -129,7 +129,7 @@ else{
 			<td align="center"><%=dto.getRegistdate()%></td>  
 		</tr>
 <%
-	} 
+	}  
 }
 %>
 	</table>
