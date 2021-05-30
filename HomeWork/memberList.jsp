@@ -145,11 +145,9 @@ else{
 						pageNum, request.getRequestURI())--%>	
 				
 				<!-- 검색 파라미터를 넘겨주는 경우 -->
-				<%=BoardPage.pagingStr(totalCount, pageSize, blockPage, 
-						pageNum, request.getRequestURI(), queryStr)%>							 
+				<%=BoardPage.pagingImg(totalCount, pageSize, blockPage, 
+						pageNum, request.getRequestURI())%>							 
 			</td>
-			<td width="100"><button type="button" 
-				onclick="location.href='Write.jsp?<%=queryStr %>';">글쓰기</button></td>
 		</tr>
 	</table>	
 </body>

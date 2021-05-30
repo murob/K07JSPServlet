@@ -59,6 +59,12 @@
     //아이디 검증을 위한 전역변수
     var idObj;
     var idFlag;
+    /*
+    문서내의 모든 요소가 준비되었을 때 실행이 될 수 있게 하는 메소드
+    해당 메소드를 사용하지 않고 스크립트 코드를 html코드 위에서 작성하고 실행하면
+    html코드가 실행도 되기 전에 실행되므로 프로그램 처리 순서상에서 에러가 발생할 수 있으므로
+    이를 처리하기 위한 메소드이다.
+    */
     window.onload = function(){
         idObj = document.loginFrm.user_id;//아이디 객체
     }
@@ -169,7 +175,7 @@
         return true;
     }
     //아이디검증 로직을 하나로 묶는다.
-    function idCapsule(){        
+    function idCapsule(){
         //1.아이디는 8~12자 이내여야 한다. 즉 7자를 쓰거나 13자를 쓰면 잘못된 아이디로 판단하고 재입력을 요구한다.
         if(!idLength(idObj)){
             alert('아이디는 3~15자만 가능합니다.');
@@ -245,7 +251,7 @@
             <tr>
                 <td><span class="red">*</span> 아이디</td>
                 <td>
-                    <input type="text" class="w01" name="user_id" value="asdasd123" />       
+                    <input type="text" class="w01" name="user_id" value="" />       
                     <button type="button" onclick="idCheck(this.form);">중복확인</button>             
                 </td>
             </tr>
