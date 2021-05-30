@@ -1,3 +1,4 @@
+<%@page import="java.io.Console"%>
 <%@page import="homework.MembershipDTO"%>
 <%@page import="homework.MembershipDAO"%>
 <%@page import="model1.board.BoardDAO"%>

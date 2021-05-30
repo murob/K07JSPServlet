@@ -30,7 +30,7 @@ dto.setAddress2(address2);
 dto.setEmail(email);
 dto.setPhone(phone);
 dto.setTellnum(tellnum);
-dto.setId(session.getAttribute("user_id").toString());
+// dto.setId(session.getAttribute("user_id").toString());
 
 MembershipDAO dao = new MembershipDAO(application);
 

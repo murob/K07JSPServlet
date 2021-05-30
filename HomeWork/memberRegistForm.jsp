@@ -64,21 +64,30 @@
     해당 메소드를 사용하지 않고 스크립트 코드를 html코드 위에서 작성하고 실행하면
     html코드가 실행도 되기 전에 실행되므로 프로그램 처리 순서상에서 에러가 발생할 수 있으므로
     이를 처리하기 위한 메소드이다.
+    아래와 같은 경우는 아이디 객체인 user_id가 html 폼값에서 생성된 후 객체생성을 위한 
+    스트립트 코드가 실행될 수 있도록 처리하고 있다. 
     */
     window.onload = function(){
         idObj = document.loginFrm.user_id;//아이디 객체
     }
-	function idCheck(fn){
+	function idCheck(fn){//부모창에서 중복확인 버튼을 클릭시 실행되는 메소드
+		/*
+		아이디 검증 로직 묶음(아이디의 길이, 시작문자, 숫자 값 확인 처리)
+		아이디 검증을 하는 함수를 통해 로직에서 정의한 허용되지 않은 아이디 값에 대해서 false값을 반환
+		밑에 함수에 작성된 것 처럼 로직에 맞지 않을 경우 false값을 반환하며 idObj를 공백값으로 바꾸고
+		아이디 입력창으로 포커스를 이동한다.
+		*/
 		if(!idCapsule()){
+			console.log(idCapsule());
             idObj.value="";
             idObj.focus();
             return;
         }
-        if(fn.user_id.value==""){
+        if(fn.user_id.value==""){//만약 아이디 입력값이 공백일 경우 실행
             alert("아이디를 입력후 중복확인을 해주세요.");
             fn.user_id.focus();		
         }	
-        else{
+        else{//그밖에 검증에 통과된 아이디 값은 readOnly속성으로 중복확인 자식창이 실행된다.
             fn.user_id.readOnly = true;
             window.open("./pages/id_overapping.jsp?user_id="+fn.user_id.value,
                     "idover", "width=300,height=200");
