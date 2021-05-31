@@ -11,9 +11,9 @@
 	
 	<h3>파라미터로 전달된 데이터</h3>
 	<ol>
-		<li>query : <%=request.getParameter("query") %></li>
 		<li>name : <%=request.getParameter("name") %></li>
 		<li>id : <%=request.getParameter("id") %></li>
+		<li>query : <%=request.getParameter("query") %></li>
 	</ol>
 	
 	<h3>영역에 저장되어 전달된 객체</h3>

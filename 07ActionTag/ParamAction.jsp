@@ -25,9 +25,9 @@ request.setAttribute("member", new MemberDTO("Sung", "9999", "성춘향", null))
 		주석을 사용할 수 없다. 에러발생됨.)
 	 -->
 	<jsp:include page="ParamActionIncludeResult.jsp">
-		<jsp:param value="이몽룡" name="name"/>
-		<jsp:param value="으갹" name="id"/>
-		<jsp:param value="라면에쇠주?" name="query"/>
+		<jsp:param name="name" value="이몽룡" />
+		<jsp:param name="id" value="으갹" />
+		<jsp:param name="query" value="라면에쇠주?" />
 	</jsp:include>
 	
 	<%

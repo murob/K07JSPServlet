@@ -15,9 +15,9 @@
 	 -->
 	<h3>param액션태그로 전달된 값 출력하기</h3>
 	<ol>
-		<li>queryString : <%=request.getParameter("query") %></li>
 		<li>name : <%=request.getParameter("name") %></li>
 		<li>id : <%=request.getParameter("id") %></li>
+		<li>queryString : <%=request.getParameter("query") %></li>
 	</ol>
 	
 	<!-- 
